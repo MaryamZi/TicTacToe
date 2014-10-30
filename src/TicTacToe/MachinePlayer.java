@@ -43,7 +43,7 @@ public class MachinePlayer extends Player {
                 }
                 
                 else if(table.x_oSingle(1) != null && table.x_oSingle(1).length != 0){ // if the opponent has a PossibleWin block with a single occupied cell, fill a coner in that block or a middle cell
-                    Object wayToGo = table.x_oSingle(1);
+                    PossibleWin[] wayToGo = table.x_oSingle(1);
                     Cell[] corners;
                     Cell corner = null;
                     int i;
