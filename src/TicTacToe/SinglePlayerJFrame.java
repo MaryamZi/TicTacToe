@@ -300,24 +300,21 @@ public class SinglePlayerJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_resetButtonActionPerformed
 
     public int play(int x, int y) {
+        player1.x = x;
+        player1.y = y;
+        buttons[x][y].setText("X");
         player1.play(game.getGameTable());
-            player1.x = x;
-            player1.y = y;
-            buttons[x][y].setText("X");
         if (game.gameOver()) {
             System.out.println("GAME OVER!!!");
-            JOptionPane.showMessageDialog(new JDialog() , "Iwaraaaiii....!!!\n" + "Game WIN by " + player1.getName());
             finished = true;
             return 0;
         }
         int[] choosed = player2.chose(game.getGameTable());
         System.out.println("choosed: " + choosed[0] + " " + choosed[1]);
 
-        
         buttons[choosed[0]][choosed[1]].setText("O");
         if (game.gameOver()) {
             System.out.println("GAME OVER!!!");
-            JOptionPane.showMessageDialog(new JDialog() , "Iwaraaaiii....!!!\n" + "Game WIN by " + player2.getName());
             finished = true;
             return 0;
         }
